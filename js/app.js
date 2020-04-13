@@ -1,7 +1,3 @@
-/*TODO:
- * new rules
- */
-
 
 //initial values
 var areBtnsDisabled = false;
@@ -23,6 +19,7 @@ function onLoad() {
     document.getElementById("matrixW").value = Math.floor(window.innerWidth / 13);
     setMatrixSize();
     onReset();
+    paramsChanged = false;
     return false;
 }
 
@@ -55,6 +52,19 @@ function onStop() {
     return false;
 }
 
+//do one step
+function onStep() {
+    if(paramsChanged){
+        onReset();
+        paramsChanged = false;
+    }
+
+    setTimeout(updateMatrix, 10);
+    setTimeout(paintMatrix, 10);
+    setTimeout(updatePlot, 10);
+    return false;
+}
+
 function onSliderChange() {
     startPercent = Number(document.getElementById("startPercent").value);
     document.getElementById("rangeValue").innerHTML = startPercent + "%";
@@ -66,9 +76,9 @@ function onSliderChange() {
 //do next step of the game
 function nextStep() {
     if (continueAnimating) {
-	setTimeout(updateMatrix, 10);
+        setTimeout(updateMatrix, 10);
         setTimeout(paintMatrix, 10);
-	setTimeout(updatePlot, 10);
+        setTimeout(updatePlot, 10);
     }
 }
 
@@ -83,6 +93,7 @@ function disableBtns() {
     document.getElementById("symStart").disabled = true;
     document.getElementById("symStop").disabled = false;
     document.getElementById("symReset").disabled = true;
+    document.getElementById("symStep").disabled = true;
 
     document.getElementById("startPercent").disabled = true;
 
@@ -97,6 +108,7 @@ function enableBtns() {
     document.getElementById("symStart").disabled = false;
     document.getElementById("symStop").disabled = true;
     document.getElementById("symReset").disabled = false;
+    document.getElementById("symStep").disabled = false;
 
     document.getElementById("startPercent").disabled = false;
     document.getElementById("matrixW").disabled = false;
