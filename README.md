@@ -1,4 +1,4 @@
-# USDF model
+# The USDF cellular automata 
 Two-dimensional United we stand, divided we fall (USDF) model (or Sznajd model).
 
 ## The rules
@@ -10,5 +10,5 @@ Two-dimensional United we stand, divided we fall (USDF) model (or Sznajd model).
 * Canvas
 * Bootstrap
 
-## Input parameters:
+## Input parameters
 * density of positive decisions
