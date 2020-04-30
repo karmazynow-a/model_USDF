@@ -1,5 +1,5 @@
 
-//initial values
+// initial values
 var areBtnsDisabled = false;
 var paramsChanged = false;
 var continueAnimating = false;
@@ -9,6 +9,8 @@ var timer = null;
 
 function onLoad() {
     enableBtns();
+
+    document.getElementById("shouldArgueToggle").checked = false;
 
     document.getElementById('symStop').addEventListener('click',onStop);
 
@@ -23,7 +25,7 @@ function onLoad() {
     return false;
 }
 
-//start game
+// start game
 function onStart() {
     continueAnimating = true;
     if(paramsChanged){
@@ -36,7 +38,7 @@ function onStart() {
     return false;
 }
 
-//reset matrix
+// reset matrix
 function onReset() {
     paintPlot();
     initMatrix();
@@ -44,7 +46,7 @@ function onReset() {
     return false;
 }
 
-//stop game
+// stop game
 function onStop() {
     continueAnimating = false;
     clearInterval(timer);
@@ -52,7 +54,7 @@ function onStop() {
     return false;
 }
 
-//do one step
+// do one step
 function onStep() {
     if(paramsChanged){
         onReset();
@@ -73,7 +75,12 @@ function onSliderChange() {
     paintMatrix();
 }
 
-//do next step of the game
+function onArgueChange(){
+    shouldArgue = ~shouldArgue;
+    console.log(shouldArgue);
+}
+
+// do next step of the game
 function nextStep() {
     if (continueAnimating) {
         setTimeout(updateMatrix, 10);
@@ -88,7 +95,7 @@ function onWindowResize() {
 }
 
 function disableBtns() {
-    //only stop is enabled - to stop the game
+    // game is on, so only stop is enabled
     areBtnsDisabled = true;
     document.getElementById("symStart").disabled = true;
     document.getElementById("symStop").disabled = false;
@@ -99,11 +106,13 @@ function disableBtns() {
 
     document.getElementById("matrixW").disabled = true;
     document.getElementById("matrixH").disabled = true;
+
+    document.getElementById("shouldArgueToggle").disabled = true;
     return false;
 }
 
 function enableBtns() {
-    //only stop is disabled
+    // game is stopped so the stop is disabled
     areBtnsDisabled = false;
     document.getElementById("symStart").disabled = false;
     document.getElementById("symStop").disabled = true;
@@ -113,5 +122,7 @@ function enableBtns() {
     document.getElementById("startPercent").disabled = false;
     document.getElementById("matrixW").disabled = false;
     document.getElementById("matrixH").disabled = false;
+
+    document.getElementById("shouldArgueToggle").disabled = false;
     return false;
 }

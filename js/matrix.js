@@ -1,19 +1,25 @@
-//operations with matrix
+// operations on matrix
 
+// game parameters
 var matrixSizeX = 32;
 var matrixSizeY = 32;
 var startPercent = 50;
+var shouldArgue = false;
 
+// currnetly processed cell
 var chosenX = matrixSizeX+1;
 var chosenY = matrixSizeY+1;
 
+// matrix 
 var matrix = new Array(matrixSizeX).fill(0).map(() => new Array(matrixSizeY).fill(0));
-var newMatrix = [];
 
+// painting matrix parameters
 const negColor = "#fe5f55";
 const posColor = "#6ace96";
 const negChosenColor = "#E63A2E";
 const posChosenColor = "#2E9A5D";
+const negParamsChangedColor = "#F36B61";
+const posParamsChangedColor = "#6CB38B";
 const strokeColor = "#585b64";
 const chosenColor = "#fff";
 const cellSize = 12;
@@ -44,6 +50,21 @@ function updateMatrix() {
         setVal(chosenX, chosenY+2, val);
         setVal(chosenX+1, chosenY, val);
         setVal(chosenX+1, chosenY+1, val);
+
+    } else if (shouldArgue) {
+        // argue neighbours
+        val1 = getVal(chosenX, chosenY);
+        val2 = getVal(chosenX, chosenY+1);
+
+        // neighbours of (x, y) - val1
+        setVal(chosenX-1, chosenY, val2);
+        setVal(chosenX+1, chosenY, val2);
+        setVal(chosenX, chosenY-1, val2);
+
+        // neighbours of (x, y+1) - val2
+        setVal(chosenX-1, chosenY+1, val1);
+        setVal(chosenX+1, chosenY+1, val1);
+        setVal(chosenX, chosenY+2, val1);
     }
 }
 
@@ -68,7 +89,7 @@ function setVal(i, j, val){
     else if (j > matrixSizeY - 1 ) tmp_j = j % (matrixSizeY);
     else tmp_j = j;
 
-    console.log("values are", tmp_i, tmp_j);
+    //console.log("values are", tmp_i, tmp_j);
 
     matrix[tmp_i][tmp_j] = val;
 }
@@ -84,6 +105,19 @@ function initMatrix() {
 
 function paintMatrix() {
     const drawBoard = (ctx, step) => {
+        var posCol, negCol, posChosenCol, negChosenCol;
+        if (paramsChanged){
+            posCol = posParamsChangedColor;
+            negCol = negParamsChangedColor;
+            posChosenCol = posParamsChangedColor;
+            negChosenCol = negParamsChangedColor;
+        } else {
+            posCol = posColor;
+            negCol = negColor;  
+            posChosenCol = posChosenColor;
+            negChosenCol = negChosenColor;          
+        }
+
         for (var i = 0; i < matrixSizeX; ++i) {
             for (var j = 0; j < matrixSizeY; ++j) {
                 var pCol, nCol, sCol;
@@ -93,12 +127,12 @@ function paintMatrix() {
                         ||
                         (chosenY == matrixSizeY - 1 && j == 0))
                 ) {
-                    pCol = posChosenColor;
-                    nCol = negChosenColor;
+                    pCol = posChosenCol;
+                    nCol = negChosenCol;
                     sCol = chosenColor;
                 } else {
-                    pCol = posColor;
-                    nCol = negColor;
+                    pCol = posCol;
+                    nCol = negCol;
                     sCol = strokeColor;
                 }
 
@@ -126,11 +160,13 @@ function sumMatrix() {
         .reduce(function (a, b) { return a + b });
 }
 
-//proportions matrix to window size
+// proportions matrix to window size
 divideX = 15;
 divideY = 32;
 
 function setMatrixSize() {
+    paramsChanged = true;
+
     matrixSizeX = Number(document.getElementById("matrixW").value);
     matrixSizeY = Number(document.getElementById("matrixH").value);
     maxX = Math.floor(window.innerHeight / divideX);

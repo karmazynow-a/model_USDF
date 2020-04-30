@@ -42,7 +42,7 @@
             <table class="paramTable">
               <tr>
                 <td>
-                  <h class="card-text"> Początkowa ilość +:</h>
+                  <h class="card-text"> Początkowa ilość "zielonych":</h>
                 </td>
                 <td>
                   <table class="input-group range">
@@ -84,6 +84,16 @@
                   </table>
                 </td>
               </tr>
+              <tr>
+                <td>
+                  <h class="card-text"> Kłócenie się: </h>
+                </td>
+                <td>
+                  <div class="input-group">
+                    <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" id="shouldArgueToggle" onchange="onArgueChange()">
+                  </div>
+                </td>
+              </tr>
             </table>
           </div>
         </div>
@@ -92,7 +102,7 @@
       <div class="bottom">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title">Gęstość +:</h2>
+            <h2 class="card-title">Gęstość "zielonych":</h2>
             <div id="plot"></div>
           </div>
         </div>
@@ -116,6 +126,7 @@
   </footer>
   -->
 
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -127,6 +138,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
     integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
     crossorigin="anonymous"></script>
+
+  <!--bootstrap toggle-->
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
   <!--my scripts-->
   <script src="js/matrix.js"></script>

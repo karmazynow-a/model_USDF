@@ -29,6 +29,31 @@ body{
 	margin-bottom: 0;
 }
 
+.btn-success,
+.btn-success:hover, 
+.btn-success:not([disabled]):not(.disabled).active, 
+.btn-success:not([disabled]):not(.disabled):active, .show > 
+.btn-success.dropdown-toggle, .btn-success:focus{
+	background-color: #989ead;
+	border-color: #707070;
+	font-size: 1em;
+	width: 0;
+	height: 0;
+	padding-right: 0;
+}
+
+.btn-default, .btn-default:hover, .btn-default:focus{
+	border-color: #707070;
+	font-size: 1em;
+	width: 0;
+	height: 0;
+	padding-right: 0;
+}
+
+.toggle .btn .btn-default{
+	border-color: #707070;
+}
+
 .btn-primary, .btn-primary:hover{
 	background-color: #989ead;
 	border-color: #707070;
@@ -40,6 +65,11 @@ body{
 }
 
 .btn-primary:disabled{
+	background-color: #989ead;
+	border-color: #a3a3a3;;
+}
+
+.btn-success:disabled{
 	background-color: #989ead;
 	border-color: #a3a3a3;;
 }
@@ -146,7 +176,7 @@ h1{
 	padding-top:0.5em;
 	margin:0;
 	color: #989ead;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 h2{
