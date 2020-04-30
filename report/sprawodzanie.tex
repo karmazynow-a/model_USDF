@@ -1,0 +1,91 @@
+
+%----------------------------------------------------------------------------------------
+%	PREAMBUŁA
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{subfig}
+
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\title{Sprawozdanie}
+\author{Aleksandra Poręba}
+
+\graphicspath{{static/}} 
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	STRONA TYTUŁOWA
+%----------------------------------------------------------------------------------------
+\begin{document}
+\begin{center}
+\textsc{\normalsize Wydział Fizyki i Informatyki Stosowanej}\\[2.0cm] 
+\includegraphics[scale = 1]{logo.png}\\[1cm] 
+%\textsc{\Large Modelowanie Procesów Fizycznych}\\[0.4cm] 
+
+
+\textsc{\Large Sprawozdanie}\\[0.4cm]
+{ \huge \bfseries \LARGE{Projekt 2: Sznajd 2D} }\\[1cm] 
+
+\flushright \Large Aleksandra Poręba \\ nr. indeksu 290514
+
+\vfill 
+
+\center{\today}
+
+
+\pagebreak 
+
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	SPIS TREŚCI
+%----------------------------------------------------------------------------------------
+%\tableofcontents
+%\pagebreak
+
+%----------------------------------------------------------------------------------------
+%	ZAWARTOŚĆ
+%----------------------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+\section{Opis projektu}
+
+\section{Ciekawe reguły}
+
+\section{Używanie aplikacji}
+% o toggle
+Możliwa jest również modyfikacja początkowej gęstości siatki oraz jej rozmiaru, za pomocą z menu ''Parametry wejściowe''. Poniżej menu znajduje się wykres prezentujący gęstość życia w symulacji dla kolejnych iteracji. Po prawej stronie aplikacji znajduje się siatka, na której prezentowane jest działanie automatu.
+
+Symulacją można sterować za pomocą przycisków ''START'', ''RESET'', ''STOP'' oraz ''STEP''. Gdy zostaną zmienione parametry, siatka jest automatycznie resetowana - siatka która zostanie zresetowana zmienia kolory na poszarzałe.
+
+Do stworzenia strony zostały użyte technologie HTML + JS + CSS oraz ZingChart do rysowania wykresu.
+
+\end{document}
