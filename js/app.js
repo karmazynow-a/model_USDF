@@ -1,3 +1,4 @@
+// app controller
 
 // initial values
 var areBtnsDisabled = false;

@@ -3,12 +3,14 @@ Two-dimensional United we stand, divided we fall (USDF) model (or Sznajd model).
 
 ## The rules
 * if two randomly selected neighbors agree - people from their surrounding change their opinion
-* if they do not agree - nothing change
+* if they do not agree - nothing change or they argue - based on users choice
 
 ## Used technologies
-* jS + HTML + CS 
+* js + HTML + CSS
 * Canvas
 * Bootstrap
 
 ## Input parameters
 * density of positive decisions
+* parameter if neighbours should argue
+* size of the automata's matrix

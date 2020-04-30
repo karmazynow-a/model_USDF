@@ -40,6 +40,7 @@ body{
 	width: 0;
 	height: 0;
 	padding-right: 0;
+	margin-left: 0.5em;
 }
 
 .btn-default, .btn-default:hover, .btn-default:focus{
@@ -48,6 +49,7 @@ body{
 	width: 0;
 	height: 0;
 	padding-right: 0;
+	margin-left: 0.5em;
 }
 
 .toggle .btn .btn-default{
