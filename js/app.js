@@ -77,6 +77,7 @@ function onSliderChange() {
 }
 
 function onArgueChange(){
+	console.log("I am called");
     shouldArgue = ~shouldArgue;
     console.log(shouldArgue);
 }

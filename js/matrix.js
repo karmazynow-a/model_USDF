@@ -22,7 +22,7 @@ const negParamsChangedColor = "#F36B61";
 const posParamsChangedColor = "#6CB38B";
 const strokeColor = "#585b64";
 const chosenColor = "#fff";
-const cellSize = 12;
+const cellSize = 20;
 
 testMatrix = [
     [1,0,0,1,1,0,1,0,1,0],
@@ -161,8 +161,8 @@ function sumMatrix() {
 }
 
 // proportions matrix to window size
-divideX = 15;
-divideY = 32;
+divideX = 25;
+divideY = 45;
 
 function setMatrixSize() {
     paramsChanged = true;
