@@ -17,6 +17,7 @@ function onLoad() {
 
     document.getElementById("startPercent").value = startPercent;
     onSliderChange();
+    onSpeedChange();
 
     document.getElementById("matrixH").value = Math.floor(window.innerHeight / 8);
     document.getElementById("matrixW").value = Math.floor(window.innerWidth / 13);
@@ -74,12 +75,18 @@ function onSliderChange() {
     paramsChanged = true;
     initMatrix();
     paintMatrix();
+    return false;
 }
 
 function onArgueChange(){
-	console.log("I am called");
     shouldArgue = ~shouldArgue;
     console.log(shouldArgue);
+    return false;
+}
+
+function onSpeedChange(){
+   timeInterval = document.getElementById("simSpeed").value;
+   return false;
 }
 
 // do next step of the game
@@ -110,6 +117,7 @@ function disableBtns() {
     document.getElementById("matrixH").disabled = true;
 
     document.getElementById("shouldArgueToggle").disabled = true;
+    document.getElementById("simSpeed").disabled = true;
     return false;
 }
 
@@ -126,5 +134,6 @@ function enableBtns() {
     document.getElementById("matrixH").disabled = false;
 
     document.getElementById("shouldArgueToggle").disabled = false;
+    document.getElementById("simSpeed").disabled = false;
     return false;
 }

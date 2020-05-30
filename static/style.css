@@ -44,7 +44,7 @@ body{
 }
 
 .btn-default, .btn-default:hover, .btn-default:focus{
-	border-color: #707070;
+	border-color: #ced4da;
 	font-size: 1em;
 	width: 0;
 	height: 0;
@@ -54,6 +54,10 @@ body{
 
 .toggle .btn .btn-default{
 	border-color: #707070;
+}
+
+.speed-select {
+	margin-left: 0.5em;
 }
 
 .btn-primary, .btn-primary:hover{
