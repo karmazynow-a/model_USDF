@@ -113,11 +113,11 @@ Poniżej przedstawiono stan pośredni dla opcji z kłóceniem się i bez kłóce
 
 Na rysunku po lewej stronie można zauważyć, że opinie połączone są w ścisłe grupy, zmiana opinii może zajść tylko na brzegach zbiorów. Gdy zostanie wylosowany element ze środka zbioru, nie zmieni to rozkładu opinii w społeczeństwie.
 
-Po prawej, w automacie z włączonym kłóceniem się sąsiadów można zaobserwować przejścia pomiędzy zbiorami, gdzie wszyscy sąsiedzi ( z otoczenia \textit{von Neumana} ) danego osobnika mają opinię przeciwną do niego. Grupy jednolitych opinii są mniejsze niż w przypadku pierwszego rysunku. Z powodu dużych obszarów pośrednich, które mają tendencję zajmować większość siatki, jest większe prawdopodobieństwo osiągnięcia stanu, w którym wszystkie osobniki się ze sobą kłócą.
+Po prawej, w automacie z włączonym kłóceniem się sąsiadów można zaobserwować przejścia pomiędzy zbiorami, gdzie wszyscy sąsiedzi danego osobnika mają opinię przeciwną do niego. Grupy jednolitych opinii są mniejsze niż w przypadku pierwszego rysunku. Z powodu dużych obszarów pośrednich, które mają tendencję zajmować większość siatki, jest większe prawdopodobieństwo osiągnięcia stanu, w którym wszystkie osobniki się ze sobą kłócą.
 
 \subsection{Stan stacjonarny ''kłótnia''}
 
-Poniżej przedstawiony został stan stacjonarny, w którym wszystkie osobniki mają opinię różną niż ich sąsiedzi. W automacie kłócenie się zostało włączone.
+Poniżej przedstawiony został stan stacjonarny, w którym wszystkie spinsony mają opinię przeciwną niż ich sąsiedzi. W automacie kłócenie się zostało włączone.
 
 \begin{figure}[H]
 \centering
@@ -142,7 +142,7 @@ Poniżej zostały przedstawione wykresy dojścia do stanu stacjonarnego dla auto
 \centering
 \includegraphics[width=0.7\textwidth]{stacjonarny_niezgoda_wykres.png} 
 \includegraphics[width=0.7\textwidth]{stacjonarny_niezgoda_wykres_bezk.png}
-\caption{Wykresy przedstawiające gęstość ''zielonych'' w kolejnych krokach czasowych.}
+\caption{Wykresy przedstawiające ilość ''zielonych'' w kolejnych krokach czasowych wyrażoną w procentach.}
 \end{figure}
 
 Automatowi bez ''kłócenia się'' osiągnięcie stanu zajęło około 170 kroków czasowych. Krzywa jest raczej gładka.
@@ -154,7 +154,7 @@ W aplikacji możliwa jest modyfikacja początkowej gęstości ''zielonych'' na s
 
 Została dodana możliwość manipulacji prędkością aplikacji. Za pomocą menu można określić interwał czasowy pomiędzy kolejnymi stanami, wyrażony w milisekundach.
 
-Poniżej menu znajduje się wykres prezentujący gęstości ''zielonych'' w społeczeństwie dla kolejnych iteracji. Po prawej stronie aplikacji znajduje się siatka, na której prezentowane jest działanie automatu.
+Poniżej menu znajduje się wykres prezentujący procentową ilość ''zielonych'' w społeczeństwie dla kolejnych iteracji. Po prawej stronie aplikacji znajduje się siatka, na której prezentowane jest działanie automatu.
 
 Symulacją można sterować za pomocą przycisków ''START'', ''RESET'', ''STOP'' oraz ''KROK''. Gdy zostaną zmienione parametry, siatka jest automatycznie resetowana - jako zapowiedź zresetowania kolory zmienią się na poszarzałe. Aktualnie wylosowana para zaznaczona jest ciemniejszym kolorem z białą obwódką
 
